@@ -1,7 +1,4 @@
-from app import app
+from todor import create_app
 
-# Render y Gunicorn usan esta variable
-application = app
+application = create_app()
 
-if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=5000)
