@@ -1,0 +1,87 @@
+{% extends 'base.html' %}
+
+{% block title %}Inicio{% endblock %}
+
+{% block content %}
+<style>
+body{
+    background: radial-gradient(circle at top, #001a0f, #000);
+    color: #00ff9c;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+/* Contenedor principal */
+.cyber-box{
+    background: rgba(0,0,0,0.85);
+    border: 2px solid #00ff9c;
+    box-shadow: 0 0 25px #00ff9c;
+    padding: 40px;
+    border-radius: 20px;
+    margin-top: 50px;
+}
+
+/* Título */
+.cyber-title{
+    text-shadow: 0 0 15px #00ff9c;
+}
+
+/* Botones */
+.cyber-btn{
+    background: transparent;
+    border: 2px solid #00ff9c;
+    color: #00ff9c;
+    padding: 12px 30px;
+    border-radius: 10px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    transition: .3s;
+}
+
+.cyber-btn:hover{
+    background:#00ff9c;
+    color:black;
+    box-shadow:0 0 25px #00ff9c;
+}
+
+/* Cuervo */
+.raven{
+    position: absolute;
+    width: 120px;
+    animation: fly 8s linear infinite;
+    top: 20%;
+}
+
+@keyframes fly {
+    0% {left: -150px; transform: scale(0.8);}
+    50% {top: 10%; transform: scale(1);}
+    100% {left: 110%; top: 30%; transform: scale(0.7);}
+}
+</style>
+
+<div class="position-relative">
+    <!-- Cuervo animado -->
+    <img src="https://i.imgur.com/Qp5Bz2C.gif" class="raven">
+
+    <div class="container-sm text-center cyber-box">
+        <h1 class="display-3 cyber-title">
+            Bienvenido René Garón Rangel
+        </h1>
+
+        <h3 class="mb-4">Sistema de Gestión de Tareas – UTVT</h3>
+
+        <p class="lead">
+            Plataforma futurista para administrar tus tareas académicas, laborales o personales
+            utilizando Flask y bases de datos.
+        </p>
+
+        <hr class="my-4" style="border-color:#00ff9c;">
+
+        <p>¿Ya tienes una cuenta?</p>
+
+        <div class="d-flex justify-content-center">
+            <a href="{{url_for('auth.login')}}" class="cyber-btn mx-3">Iniciar sesión</a>
+            <a href="{{url_for('auth.register')}}" class="cyber-btn mx-3">Registrarse</a>
+        </div>
+    </div>
+</div>
+{% endblock %}
