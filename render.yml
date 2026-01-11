@@ -5,5 +5,5 @@ services:
     plan: free
     runtime: python
     pythonVersion: 3.11.8
-    buildCommand: pip install --upgrade pip && pip install -r requirements.txt
+    buildCommand: pip install -r requirements.txt
     startCommand: gunicorn run:app
